@@ -1,3 +1,10 @@
+/*
+    this file was an attempt to create a daily planned that is all terminal based 
+    I believe it can hit a loop if the timing is incorrect, edge cases were not accounted for
+    after I add this comment I plan to rewrite it to get it working, althouhg I plan to keep it simple, 
+    i just dont want to add incorrect code without making some simple changes to get it working 
+*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
