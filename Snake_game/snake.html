@@ -1,0 +1,28 @@
+<!-- 
+  Version of the sname game that I made in class for a simple project, I think the goal was to learn how to use the canvas element and javascript.
+  It seems to not be fully functional ex. there is no losing, and I dont think the snake grows or anything like that.
+  
+-->
+<!DOCTYPE html>
+<html>
+
+<body>
+
+
+    <h1>
+        <p id="header">COUNTDOWN IN SECONDS</p>
+        <p id="here"></p>
+    </h1>
+    <input type="button" onclick=stopTime() value="Stop">
+    <input type="button" onclick=startTime() value="Start">
+    <input type="button" onclick=goRight() value="Right">
+    <input type="button" onclick=goLeft() value="Left">
+    <p></p>
+    <canvas id="myCanvas" width="400" height="400" style="border:1px solid #000000;"></canvas>
+
+
+
+
+
+    <script src="snake.js">
+    </script>
