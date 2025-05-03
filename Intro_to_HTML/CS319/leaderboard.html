@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+
+
+<head>
+    <style>
+        body {
+            color: #000 !important;
+        }
+        
+        button {
+            background-color: #04AA6D;
+            color: rgb(255, 255, 255);
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        button:hover {
+            opacity: 0.8;
+        }
+        
+        .cancelbtn {
+            width: auto;
+            padding: 10px 18px;
+            background-color: #f44336;
+        }
+        
+        div {
+            background-color: rgba(158, 239, 229, 1);
+            ;
+            width: 500px;
+            height: 300px;
+            border: 10px solid rgb(0, 0, 0);
+            padding: 50px;
+            margin: 20px;
+        }
+        
+        table {
+            width: 100%;
+            border: 5px solid;
+            background-color: rgb(255, 255, 255);
+        }
+    </style>
+</head>
+
+
+
+
+
+
+<body style="background-color: rgba(158, 239, 229, 1);">
+
+    <h1 style="color:black">Leaderboard</h1>
+
+
+    <p id="here" style="color:black"></p>
+
+    <!-- Empty table, that when submit score button is clicked will add elements  -->
+    <table id=scoreTable style="width:100%" border: 1px solid;>
+
+        <tr style="color:black">
+
+        </tr>
+    </table>
+    <!-- temp manual way to input scores into table  -->
+    <label for="uname"><b style="color:black">Username</b></label>
+    <input type="text" placeholder="Enter Username" id="uname">
+
+    <label for="scr"><b style="color:black">Score</b></label>
+    <input type="text" placeholder="Enter Score" id="scr">
+    <input type="button" onclick=addScore() value="Submit Score">
+
+
+
+
+    <form action="index.html">
+        <button type="button" class="cancelbtn">Back</button>
+    </form>
+
+
+
+</body>
+
+</html>
+
+
+<script>
+    //Creates a new row and 2 cells into the table, with the values put into username and score
+    //can be pressed as many times as wanted 
+    function addScore() {
+        var user = document.getElementById("uname").value;
+        var scr = document.getElementById("scr").value;
+        var table = document.getElementById("scoreTable");
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        cell1.innerHTML = user;
+        cell2.innerHTML = scr;
+
+        //Switches elements each time a new one is submitted 
+        //will have highest score on top 
+        var table, rows, switching, i, x, y, shouldSwitch;
+        table = document.getElementById("scoreTable");
+        switching = true;
+        while (switching) {
+            switching = false;
+            rows = table.rows;
+            //Loops through to check each element compared to others 
+            for (i = 0; i < (rows.length - 1); i++) {
+                shouldSwitch = false;
+
+                x = rows[i].getElementsByTagName("TD")[1];
+                y = rows[i + 1].getElementsByTagName("TD")[1];
+                //if one number is smaller it puts larger on top 
+                if (Number(x.innerHTML) < Number(y.innerHTML)) {
+
+                    shouldSwitch = true;
+                    break;
+                }
+            }
+            if (shouldSwitch) {
+
+                rows[i].parentNode.insertBefore(rows[i + 1], rows[i]);
+                switching = true;
+
+            }
+        }
+    }
+</script>
