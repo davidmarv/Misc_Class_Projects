@@ -1,10 +1,25 @@
 <!DOCTYPE html>
+<html lang="en">
 
-<html>
-<title>Currency Converter</title>
+<head>
+    <meta charset="UTF-8">
+    <title>Currency Converter</title>
+</head>
 
-<h1>Currency Converter</h1>
+<body>
+    <h1>Currency Converter</h1>
 
-<p>enter Currency</p>
+    <label for="currencyInput">Enter Currency:</label>
+    <input type="number" id="currencyInput" placeholder="Amount in USD" step="0.01">
 
-< </html>
+    <label for="currencySelect">Select Currency:</label>
+    <select id="currencySelect">
+    </select>
+
+    <button id="convertButton">Convert</button>
+    <p id="result"></p>
+
+    <script src="CurrencyConverter.js"></script>
+</body>
+
+</html>
